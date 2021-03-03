@@ -36,6 +36,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Description of the Problem and Discussion of the Background
 
+<!-- introduction -->
 ### Introduction Section:
 
 The police of Denver, Colorado patrolling in the whole city. However, various crimes occurred in any part of the city. Due to the limited number of patrolling cars of the police department, most of the area is not covered by the police cars. Therefore, police need to know those areas, where most crimes have occurred. So that, they can cover most of the area by sending police car. The less crime area can be omitted.
@@ -43,9 +44,7 @@ The police of Denver, Colorado patrolling in the whole city. However, various cr
 To understand these, the police needs answers to several questions. The answers to those questions must be supported by data and analytics. These are their questions:
 
 1) How can we find those areas, where the most crimes have occurred?
-
 2) How can we find the most offensive crimes and the area?
-
 3) How can we find the most most occured crime?
 
 
@@ -69,43 +68,32 @@ Foursquare API to explore venue types surrounding each neighborhood of the city 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Loading crime data of Denver City, CO
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To speed up processing, the data was stored locally on the machine after it was formatted as desired. To keep computing costs relatively low, only the crimes from 2017 were chosen.
 
-### Prerequisites
+![Dataset](./pic/1.png)
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+## Data observation and some further process for our goal.
 
-### Installation
+![Dataset](./pic/2.png)
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+## Visualization
+
+We can now visualize the crimes that were committed in 2017 based on various parameters such as number of crimes per:
+
+1. Type of crime
+2. Per month
+3. Per day of the month
+4. Per time of day
+5. Per Neighborhood
 
 
+### Number of crimes per Crime Code Description¶
 
-<!-- USAGE EXAMPLES -->
-## Usage
+The top 25 crimes from 2017 were plotted on a bar chart. It was not very surprising to see there were a lot of theft ittem from vehicle related crimes. The large number of Identity Theft cases was a surprise than other crime.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+![Number of crimes per Crime](./pic/3.png)
 
 
 
