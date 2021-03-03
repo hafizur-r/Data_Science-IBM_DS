@@ -1,3 +1,5 @@
+# Data Science and Machine Learning Capstone Project
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
