@@ -89,7 +89,7 @@ We can now visualize the crimes that were committed in 2017 based on various par
 5. Per Neighborhood
 
 
-### Number of crimes per Crime Code Description¶
+### Number of crimes per Crime Code Description
 
 The top 25 crimes from 2017 were plotted on a bar chart. It was not very surprising to see there were a lot of theft ittem from vehicle related crimes. The large number of Identity Theft cases was a surprise than other crime.
 
@@ -97,53 +97,61 @@ The top 25 crimes from 2017 were plotted on a bar chart. It was not very surpris
 
 
 
-<!-- ROADMAP -->
-## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+### Number of crimes per Month Code Description
+
+The crimes from 2017 were plotted on a bar chart as number of crimes per month. The number of crimes stayed consistent with a dip in October, November, and December, which can be attributed to a lower number of days in the month and an increase in the other months.
+
+![Number of crimes per Month](./pic/4.png)
 
 
 
-<!-- CONTRIBUTING -->
-## Contributing
+### Number of crimes per Day of the Month Code Description
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+The crimes from 2017 were plotted on a bar chart as number of crimes per day of the month. The number of crimes stayed consistent throughout the month typically. The drop in number of crimes on the 31st is because not every month has 31 days. Similarly with reduced contributions from February (29th and 30th). It could potentially be an issue and the data would likely need a weighted average of some kind to scale it uniformly.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+![Number of crimes per Month](./pic/5.png)
+
+
+### Number of crimes per Area Code Description
+The crimes from 2017 were plotted on a bar chart as number of crimes per neighborhood of occurrence. It is clear which areas are the most dangerous -Five Points is the worst neighborhoods in the city. Wellshire and Indian Creek are the best neighborhoods in the city.
+
+![Number of crimes per Month](./pic/6.png)
+
+The crimes by count were selected from the 2017 crime dataframe. These were assigned a blue color and the result was charted using folium. The next section show the crime distributions in the city using cluster maps and heat maps.
+
+![Number of crimes per Month](./pic/7.png)
+
+![Number of crimes per Month](./pic/8.png)
+
+![Number of crimes per Month](./pic/9.png)
+
+
+## Foursquare Venue Data
+The next step was to use the Foursquare API to retrieve data for businesses and services around a particular neighborhood. Using the Venue ID, a subsequent call was designed to extract the venue rating. However, this is a Premium endpoint and was limited to only 500 requests per day which was not sufficient to handle our dataset of approximately 50,000 venues. While the code is shown below, we subsequently discard the venue_rating column from our dataset. The dataframe was stored locally on the machine for faster retrieval.
+
+
+## Data Modeling
+The 2017 crime data frame was modeled using a Random Forest algorithm. The classification of crimes was based on location, time and date.
+
+The first step was to classify dangerous crimes such as assault and theft related crimes and assign them a value 1. All other crimes were classified with a 0.
+
+The next step was applying One-Hot Encoding on the hour of day, day of month, month, latitude and longitude where the crime occurred.
+
+## Random Forest Algorithm
+The RF algorithm was chosen to model and classify the dataset. This algorithm searches for the best feature among a random subset of features while splitting a node. Another important advantage of this algorithm is the ability to visualize the relative importance of different features.
+
+The dataset was split into train and test datasets.
+
+![Number of crimes per Month](./pic/10.png)
+![Number of crimes per Month](./pic/11.png)
 
 
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Open source License.
 
 
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
 
